@@ -6,7 +6,8 @@ from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
-    path("v1/admin/", include("admin.urls")),
+    path("v1/admin/", admin.site.urls),
+    # path("v1/admin/", include("admin.urls")),
     path("v1/auth/", include("account.urls")),
     path("v1/category/", include("category.urls")),
     path("v1/combo/", include("combo.urls")),
