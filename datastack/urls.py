@@ -1,4 +1,4 @@
-from django.contrib import admin
+from django.contrib import admin as django_admin
 from django.urls import path, include
 from django.conf.urls import url
 from django.conf.urls.static import static
@@ -6,8 +6,8 @@ from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
-    path("v1/admin/", admin.site.urls),
-    # path("v1/admin/", include("admin.urls")),
+    # path("admin_dashboard", django_admin.site.urls),
+    path("v1/admin/", include("admin.urls")),
     path("v1/auth/", include("account.urls")),
     path("v1/category/", include("category.urls")),
     path("v1/combo/", include("combo.urls")),
